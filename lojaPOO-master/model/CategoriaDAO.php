@@ -43,10 +43,12 @@ class CategoriaDAO extends DAO
     public function insert($categoria){
        //RECEBE UM OBJETO DO TIPO CATEGORIA E 
        //INSERE SEUS DADOS NO BANCO
-       $sql = "insert into categoria (nome, descricao) values (:nome, :descricao)";
+       $sql = "insert into categoria (id, nome, descricao) values (:id, :nome, :descricao)";
        $stmt = $this->conexao->prepare($sql);
+       $id = $categoria->getId();
        $nome = $categoria->getNome();
        $desc = $categoria->getDescricao();
+       $stmt->bindParam(':id', $id);
        $stmt->bindParam(':nome', $nome);
        $stmt->bindParam(':descricao', $desc);
        if ( $stmt->execute()){

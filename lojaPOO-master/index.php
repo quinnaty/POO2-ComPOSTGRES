@@ -33,8 +33,9 @@ switch ($acao){
         $categoriaNova->setNome($_POST['nome']);
         $categoriaNova->setDescricao($_POST['descricao']);
         $cat = new CategoriaController();
-        $cat->inserir($categoriaNova);
-        exit;
+        $cat->incluir($categoriaNova);
+        return $cat;
+      
     default:
         echo "Ação inválida";
 

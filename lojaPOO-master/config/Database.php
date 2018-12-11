@@ -11,7 +11,7 @@ class Database
 // Conexão BD Postgres com PDO
 // $conexao = new PDO("pgsql:host=localhost;port=;dbname=loja;user=root;password=");
     const HOST = "localhost";
-    const DATABASE = "loja";
+    const DATABASE = "loja_poo2";
     const USER = "postgres";
     const PASSWORD = "";    
 
